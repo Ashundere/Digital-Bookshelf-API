@@ -24,7 +24,7 @@ const displayAllBooks = async (req, res)=>{
 const displayById = async (req, res)=>{
     try{
         const bookId = req.params._id
-          const foundBook = await Book.find({bookId});
+          const foundBook = await Book.findOne({bookId});
           res.status(200).json(foundBook)
     }catch (error){
         console.error("Error displaying book:", error)
